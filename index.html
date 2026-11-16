@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en-GH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klassic Bites — Best Cakes, Lunch & Juices in Ho</title>
+<meta name="description" content="Celebration cakes, pastries, lunch boxes and fresh juices in Ho. Rated 4.7 stars. Order via WhatsApp.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%2316A34A'/%3E%3Ctext%20x='50'%20y='72'%20font-family='system-ui,sans-serif'%20font-size='62'%20font-weight='900'%20fill='%23FFFFFF'%20text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  try {
+    var t = localStorage.getItem('theme');
+    if (t !== 'light' && t !== 'dark') t = 'light'; 
+    document.documentElement.setAttribute('data-theme', t);
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.setAttribute('content', t === 'dark' ? '#0F1710' : '#FFFFFF');
+  } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
+})();
+</script>
+
+<style>
+/* =========================================================
+   KLASSIC BITES - VIBRANT CAFE & TECH (3D EDITION)
+   ========================================================= */
+:root {
+  color-scheme: light;
+  
+  --bg: #FFFFFF;
+  --bg-deep: #F0FDF4;
+  --surface: rgba(255, 255, 255, 0.85);
+  --surface-solid: #FFFFFF;
+  --line: #DCFCE7;
+  
+  --text: #1C1C1C;
+  --text-soft: #4B5563;
+  --text-mute: #9CA3AF;
+  
+  --green: #16A34A;
+  --green-dark: #14532D;
+  --green-light: #22C55E;
+  --green-glow: rgba(22, 163, 74, 0.25);
+  
+  --gold: #D4AF37;
+  --gold-glow: rgba(212, 175, 55, 0.2);
+  
+  --pink: #E11D48;
+  --pink-glow: rgba(225, 29, 72, 0.2);
+  
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-3d: 0 20px 40px -10px rgba(0, 0, 0, 0.1), 0 10px 20px -5px rgba(0, 0, 0, 0.04);
+  
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --header-bg-scrolled: rgba(255, 255, 255, 0.98);
+  
+  --radius: 24px;
+  --wrap: 1000px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* DARK THEME - Deep Forest */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0F1710;
+  --bg-deep: #0A0F0A;
+  --surface: rgba(22, 46, 28, 0.7);
+  --surface-solid: #162E1C;
+  --line: rgba(74, 222, 128, 0.15);
+  
+  --text: #F3F4F6;
+  --text-soft: #9CA3AF;
+  --text-mute: #6B7280;
+  
+  --green: #4ADE80;
+  --green-dark: #166534;
+  --green-light: #86EFAC;
+  --green-glow: rgba(74, 222, 128, 0.25);
+  
+  --gold: #D4AF37;
+  --gold-glow: rgba(212, 175, 55, 0.2);
+  
+  --pink: #E85D75;
+  --pink-glow: rgba(232, 93, 117, 0.25);
+  
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-3d: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+  
+  --header-bg: rgba(15, 23, 16, 0.85);
+  --header-bg-scrolled: rgba(10, 15, 10, 0.98);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  overflow-x:clip;
+  background: radial-gradient(circle at 50% 0%, var(--bg-deep) 0%, var(--bg) 60%, var(--bg) 100%);
+  color: var(--text);
+  font-family: var(--font-main);
+  font-size:1rem;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:90px;
+  transition: background-color .4s var(--ease), color .4s var(--ease);
+}
+
+h1,h2,h3{font-family: var(--font-main);line-height:1.1;margin:0 0 .6rem;letter-spacing:-.03em;font-weight:800;color:var(--text);}
+p{margin:0 0 1rem;}
+address{font-style:normal;}
+svg{max-width:100%;}
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px;}
+
+/* ---------- Scroll Progress Bar ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  z-index: 9999;
+  box-shadow: 0 0 10px var(--green-glow);
+  transition: width 0.1s ease-out;
+}
+
+/* ---------- Layout ---------- */
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 1.25rem; position: relative; z-index: 2;}
+.section{padding:5rem 0;position:relative; overflow: hidden;}
+.section-tint{background:var(--bg-deep);}
+
+.eyebrow{margin:0 0 .5rem;color:var(--green);font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.5rem;}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;}
+.lede{max-width:56ch;margin:.85rem 0 2.5rem;color:var(--text-soft);font-size:1.1rem;line-height:1.7;}
+.section h2{font-size:clamp(2rem, 5vw, 3rem);margin:0 0 1rem;}
+
+/* ---------- Header & Navigation ---------- */
+.site-header{position:sticky;top:0;z-index:80;background:var(--header-bg);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:all .4s var(--ease);}
+.site-header.scrolled{background:var(--header-bg-scrolled);border-bottom:1px solid var(--line);box-shadow:0 4px 20px rgba(0,0,0,0.05);}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:5rem;max-width:var(--wrap);margin:0 auto;padding:.5rem 1.25rem;position:relative;}
+
+.brand{display:flex;flex-direction:column;text-decoration:none;line-height:1;align-items:flex-start;}
+.brand-title {font-family: var(--font-main); font-size: 1.5rem; font-weight: 900; color: var(--text); letter-spacing: -.04em;}
+.brand-subtitle {font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--green); margin-top: 4px; font-weight: 800;}
+
+.nav-actions{display:flex;align-items:center;gap:1rem;}
+.theme-toggle{background:transparent;border:1px solid var(--line);color:var(--text);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;cursor:pointer;transition:all .3s;}
+.theme-toggle:hover{border-color:var(--green);color:var(--green);}
+.theme-toggle .icon-sun{display:none;}
+.theme-toggle .icon-moon{display:block;}
+:root[data-theme="dark"] .theme-toggle .icon-sun{display:block;}
+:root[data-theme="dark"] .theme-toggle .icon-moon{display:none;}
+
+.menu-btn{display:inline-flex;background:transparent;border:none;color:var(--text);cursor:pointer;padding:8px;flex-direction:column;gap:5px;}
+.menu-btn span{display:block;width:24px;height:2px;background:currentColor;transition:all .3s;}
+.menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.menu-btn.open span:nth-child(2){opacity:0;}
+.menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+.nav-links{position:absolute;top:100%;left:0;right:0;background:var(--surface-solid);border-bottom:1px solid var(--line);flex-direction:column;padding:1rem;display:none;box-shadow:var(--shadow-3d);}
+.nav-links.open{display:flex;}
+.nav-links a{color:var(--text);text-decoration:none;font-weight:700;padding:.8rem 1rem;border-bottom:1px solid var(--line);transition:color .2s;}
+.nav-links a:hover{color:var(--green);}
+
+@media(min-width: 768px){
+  .menu-btn{display:none;}
+  .nav-links{position:static;display:flex !important;flex-direction:row;background:transparent;border:none;box-shadow:none;padding:0;gap:1.5rem;}
+  .nav-links a{border:none;padding:0;font-size:.95rem;}
+}
+
+/* ---------- Hero (Parallax & 3D) ---------- */
+.hero{position:relative;padding:6rem 0 8rem;overflow:hidden;background:transparent;text-align:center;}
+.hero-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:80vw;height:80vw;max-width:600px;background:var(--green);filter:blur(150px);opacity:0.15;border-radius:50%;pointer-events:none;z-index:0; will-change: transform;}
+
+.parallax-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.hero-svg{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:120vw;max-width:800px;height:auto;opacity:0.04;fill:var(--green); will-change: transform;}
+:root[data-theme="dark"] .hero-svg{opacity:0.06;}
+
+.hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto;}
+
+/* Status Pill */
+.status-row { display: flex; justify-content: center; margin-bottom: 1.5rem; }
+.status-pill { display:inline-flex; align-items:center; gap:0.5rem; background:var(--surface-solid); border:1px solid var(--line); padding:0.5rem 1rem; border-radius:999px; font-size:0.8rem; font-weight:800; box-shadow:var(--shadow-sm); color:var(--text); backdrop-filter: blur(10px);}
+.status-dot { width:8px; height:8px; border-radius:50%; background:#EF4444; position:relative; }
+.status-dot.is-open { background:var(--green); animation:pulseGreen 2s infinite; }
+
+.badge-row { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;}
+.badge {display:inline-flex;align-items:center;gap:.5rem;background:var(--surface-solid);border:1px solid var(--line);border-radius:999px;padding:.5rem 1.2rem;font-size:.85rem;font-weight:800;color:var(--text);box-shadow:var(--shadow-sm); backdrop-filter: blur(10px);}
+.badge.gold { border-color: var(--gold); color:var(--text); }
+
+.hero-title{font-size:clamp(2.8rem, 8vw, 4.5rem);line-height:1;margin:0 0 1.5rem;font-weight:900; text-shadow: 0 4px 20px rgba(0,0,0,0.05);}
+.hero-title em{font-style:normal;color:var(--green);}
+.hero-tag{max-width:50ch;margin:0 auto 2.5rem;color:var(--text-soft);font-size:1.15rem;}
+
+.hero-cta { display: flex; flex-direction: column; gap: 1rem; justify-content: center; }
+@media(min-width: 640px) { .hero-cta { flex-direction: row; } }
+
+/* ---------- 3D Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1.1rem 2rem;border-radius:16px;font-size:1rem;font-weight:800;text-decoration:none;cursor:pointer;transition:all .1s var(--ease);border:2px solid transparent;width:100%; position: relative; overflow: hidden;}
+.btn-green{
+  background: linear-gradient(180deg, var(--green-light), var(--green)); 
+  color:#FFF; 
+  border-bottom: 4px solid var(--green-dark);
+  box-shadow: 0 10px 20px var(--green-glow);
+}
+.btn-green:hover{
+  background: linear-gradient(180deg, var(--green), var(--green-dark));
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px var(--green-glow);
+}
+.btn-green:active{
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+  box-shadow: 0 4px 10px var(--green-glow);
+}
+.btn-outline{
+  background: var(--surface-solid);
+  border: 2px solid var(--green);
+  color: var(--green);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.btn-outline:hover{
+  background: var(--bg-deep);
+  transform: translateY(-2px);
+}
+.btn-outline:active { transform: translateY(1px); }
+
+/* ---------- 3D Custom Builder ---------- */
+.builder-card{
+  background: var(--surface); 
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius:var(--radius);
+  padding:2rem;
+  box-shadow:var(--shadow-3d);
+  border:1px solid var(--line);
+  position: relative;
+  transform: perspective(1000px) translateZ(0);
+}
+.builder-group{margin-bottom:1.5rem;}
+.builder-label{font-weight:800;font-size:.9rem;margin-bottom:.5rem;display:block;color:var(--text);}
+.select-input, .text-input{width:100%;padding:1rem;border:1.5px solid var(--line);border-radius:12px;font-size:1rem;font-family:inherit;color:var(--text);background:var(--bg-deep);appearance:none;transition:all .2s; font-weight:600;}
+.select-input:focus, .text-input:focus{outline:none;border-color:var(--green);background:var(--surface-solid);box-shadow:0 0 0 4px var(--green-glow);}
+.select-wrapper { position: relative; }
+.select-wrapper::after { content: "▼"; position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); font-size: 0.8rem; color:var(--green); pointer-events: none; }
+
+/* ---------- Filterable Menu Tabs (3D Cards) ---------- */
+.menu-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-bottom:2rem;}
+.tab-btn{padding:.8rem 1.4rem;border-radius:12px;border:2px solid var(--line);background:var(--surface-solid);color:var(--text-soft);font-weight:800;font-size:.9rem;cursor:pointer;transition:all .2s var(--ease);}
+.tab-btn.active{background:var(--green);border-color:var(--green);color:#FFF;box-shadow:0 6px 16px var(--green-glow);transform:translateY(-2px);}
+.tab-btn:hover:not(.active){background:var(--bg-deep); border-color: var(--green-light);}
+
+.menu-grid{display:grid;grid-template-columns:1fr;gap:1.2rem;}
+@media(min-width: 640px) { .menu-grid { grid-template-columns:repeat(2, 1fr); } }
+@media(min-width: 960px) { .menu-grid { grid-template-columns:repeat(3, 1fr); } }
+
+.menu-card{
+  background:var(--surface-solid);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:1.5rem;
+  display:none;
+  animation:fadeUp .5s var(--ease) both; 
+  transition: all .4s var(--ease);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+.menu-card.show{display:block;}
+.menu-card:hover { 
+  transform: translateY(-8px) scale(1.02); 
+  box-shadow: var(--shadow-3d); 
+  border-color: var(--green); 
+}
+.menu-card h3{margin:0 0 .25rem;font-size:1.1rem;font-weight:800;}
+.menu-card p{margin:0;font-size:.9rem;color:var(--text-soft);}
+.menu-tag{display:inline-block;padding:.3rem .6rem;border-radius:6px;font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.75rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05);}
+.tag-green { background: var(--green-glow); color: var(--green); }
+.tag-gold { background: rgba(212, 175, 55, 0.15); color: #997A1E; }
+.tag-pink { background: var(--pink-glow); color: var(--pink); }
+
+/* ---------- Reviews ---------- */
+.reviews-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:2rem;}
+@media(min-width: 768px) { .reviews-grid { grid-template-columns:repeat(3, 1fr); } }
+.review-card{background:var(--surface-solid);padding:2rem;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow-sm); transition: all .4s var(--ease);}
+.review-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-3d); }
+.stars{color:var(--gold);font-size:1.2rem;letter-spacing:2px;margin-bottom:1rem;}
+.review-text{font-style:italic;font-size:1rem;color:var(--text-soft);line-height:1.6;margin-bottom:1.5rem;}
+.review-author{font-weight:800;font-size:.9rem;color:var(--text);}
+
+/* ---------- Location & Footer ---------- */
+.location-card { background: var(--surface-solid); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow-3d); display: flex; flex-direction: column; gap: 1.5rem; }
+.location-list { display: flex; flex-direction: column; gap: 1rem; }
+.location-item { display: flex; gap: 1rem; align-items: flex-start; }
+.location-item svg { flex: none; width: 20px; height: 20px; fill: var(--green); margin-top: 4px; }
+.location-item strong { display: block; font-size: 0.85rem; color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+.location-item span { font-weight: 700; color: var(--text); }
+
+/* FAB */
+.fab{position:fixed;right:1.25rem;bottom:calc(1.25rem + env(safe-area-inset-bottom));z-index:90;display:grid;place-items:center;width:56px;height:56px;border:2px solid var(--surface-solid);border-radius:50%;background:linear-gradient(180deg, var(--green-light), var(--green));color:#FFF;box-shadow:0 10px 24px rgba(0,0,0,0.3);text-decoration:none;transition:all .3s var(--ease);}
+.fab::before{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--green);animation:ring 2.5s ease-out infinite;pointer-events:none;}
+.fab svg{width:28px;height:28px;fill:currentColor;}
+.fab:hover{transform:translateY(-5px) scale(1.05);box-shadow:0 15px 30px rgba(22,163,74,0.4);}
+
+/* Animations */
+.js .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+.js .reveal.in { opacity: 1; transform: none; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes ring { 0% { transform: scale(1); opacity: 0.6; } 80%, 100% { transform: scale(1.4); opacity: 0; } }
+@keyframes pulseGreen { 0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.6); } 70% { box-shadow: 0 0 0 8px rgba(22, 163, 74, 0); } 100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); } }
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="nav">
+    <a href="#" class="brand">
+      <span class="brand-title">Klassic Bites</span>
+      <span class="brand-subtitle">Cafe & Catering</span>
+    </a>
+    
+    <div class="nav-links" id="navLinks">
+      <a href="#builder" onclick="closeMenu()">Custom Order</a>
+      <a href="#menu" onclick="closeMenu()">Menu</a>
+      <a href="#reviews" onclick="closeMenu()">Reviews</a>
+      <a href="#location" onclick="closeMenu()">Find Us</a>
+    </div>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="4" fill="currentColor"/><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></g></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/></svg>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="parallax-layer">
+      <div class="hero-glow" id="heroGlow"></div>
+      <div class="hero-svg" id="heroSvg">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cakeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="var(--green)" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="var(--gold)" stop-opacity="0.1"/>
+            </linearGradient>
+          </defs>
+          <path d="M15 85 L15 50 C15 35 85 35 85 50 L85 85 Z" fill="url(#cakeGradient)" stroke="var(--green)" stroke-width="0.5" stroke-opacity="0.5" />
+          <path d="M15 50 C15 35 85 35 85 50" fill="none" stroke="var(--green)" stroke-width="0.5" stroke-opacity="0.5"/>
+          <path d="M25 50 L25 30 C25 20 75 20 75 30 L75 50" fill="url(#cakeGradient)" stroke="var(--green)" stroke-width="0.5" stroke-opacity="0.5"/>
+          <circle cx="50" cy="15" r="4" fill="none" stroke="var(--gold)" stroke-width="0.5" stroke-opacity="0.5"/>
+          <path d="M50 5 L50 20" stroke="var(--gold)" stroke-width="0.5" stroke-opacity="0.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="wrap hero-content reveal">
+      
+      <!-- LIVE STATUS -->
+      <div class="status-row">
+        <div class="status-pill">
+          <div class="status-dot" id="statusDot"></div>
+          <span id="statusText">Checking hours...</span>
+        </div>
+      </div>
+
+      <div class="badge-row">
+        <div class="badge"><span>★</span> 4.7 Rated in Ho</div>
+        <div class="badge gold">📍 Best Cakes in Ho</div>
+      </div>
+      <h1 class="hero-title">Feel the taste<br><em>in every bite!</em></h1>
+      <p class="hero-tag">Celebration cakes, pastries, lunch boxes, and fresh juices. Delivering joy across Ho, Accra, Aflao, and beyond.</p>
+      
+      <div class="hero-cta">
+        <a href="#builder" class="btn btn-green">Build a Custom Cake</a>
+        <a href="https://wa.me/233555077589?text=Hello%20Klassic%20Bites,%20I%20would%20like%20to%20make%20an%20order" target="_blank" rel="noopener" class="btn btn-outline">Order on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOM BUILDER -->
+  <section class="section section-tint" id="builder">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center; margin-bottom: 2rem;">
+        <p class="eyebrow" style="justify-content:center;">Custom Order</p>
+        <h2>Design Your Event</h2>
+        <p class="lede" style="margin: 0 auto;">Tell us what you need and we'll send the quote directly to your WhatsApp.</p>
+      </div>
+
+      <div class="builder-card reveal" style="max-width: 600px; margin: 0 auto;">
+        
+        <div class="builder-group">
+          <label class="builder-label">What are you ordering?</label>
+          <div class="select-wrapper">
+            <select class="select-input" id="order-category">
+              <option value="Celebration Cake">Celebration Cake</option>
+              <option value="Bento Cake">Bento Cake</option>
+              <option value="Food Basket">Food Basket</option>
+              <option value="Lunch Box">Lunch Box</option>
+              <option value="Pastry Order">Pastry Order</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="builder-group">
+          <label class="builder-label">Size / Shape</label>
+          <div class="select-wrapper">
+            <select class="select-input" id="order-size">
+              <option value="Round - 6 inch">Round - 6 inch</option>
+              <option value="Square - 8 inch">Square - 8 inch</option>
+              <option value="Heart Shaped">Heart Shaped</option>
+              <option value="1-Tier (Standard)">1-Tier (Standard)</option>
+              <option value="2-Tier (Medium)">2-Tier (Medium)</option>
+              <option value="3-Tier (Wedding)">3-Tier (Wedding)</option>
+              <option value="Standard Box">Standard Box</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="builder-group">
+          <label class="builder-label">Flavour / Filling</label>
+          <div class="select-wrapper">
+            <select class="select-input" id="order-flavour">
+              <option value="Vanilla">Vanilla</option>
+              <option value="Chocolate">Chocolate</option>
+              <option value="Red Velvet">Red Velvet</option>
+              <option value="Black Forest">Black Forest</option>
+              <option value="Mixed Fruit">Mixed Fruit</option>
+              <option value="Not Applicable (Food/Pastry)">Not Applicable (Food/Pastry)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="builder-group">
+          <label class="builder-label">Date Needed</label>
+          <input type="date" class="text-input" id="order-date">
+          <p style="font-size:0.8rem; color:var(--green); margin-top:0.5rem; font-weight:700;">Please note: 48hrs notice required. Dates before this are disabled.</p>
+        </div>
+
+        <div class="builder-group">
+          <label class="builder-label">Cake Inscription / Special Instructions</label>
+          <input type="text" class="text-input" id="order-msg" placeholder="e.g. Happy Birthday Ama!">
+        </div>
+
+        <button type="button" id="send-custom-btn" class="btn btn-green" style="width:100%;">Send Order to WhatsApp</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU TABS -->
+  <section class="section" id="menu">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center;">
+        <p class="eyebrow" style="justify-content:center;">Our Menu</p>
+        <h2>Something for every craving</h2>
+      </div>
+
+      <div class="menu-tabs reveal">
+        <button class="tab-btn active" data-target="cakes">Celebration Cakes</button>
+        <button class="tab-btn" data-target="pastries">Pastries & Pizza</button>
+        <button class="tab-btn" data-target="lunch">Lunch Haven</button>
+        <button class="tab-btn" data-target="juice">Fruity Splash</button>
+      </div>
+
+      <div class="menu-grid">
+        <!-- CAKES -->
+        <div class="menu-card show" data-category="cakes">
+          <span class="menu-tag tag-pink">Cakes</span>
+          <h3>Birthday Cakes</h3>
+          <p>Custom designs for all ages.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+        <div class="menu-card show" data-category="cakes">
+          <span class="menu-tag tag-pink">Cakes</span>
+          <h3>Wedding Cakes</h3>
+          <p>Elegant 1 to 3-tier designs.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+        <div class="menu-card show" data-category="cakes">
+          <span class="menu-tag tag-pink">Cakes</span>
+          <h3>Bento Cakes</h3>
+          <p>Perfect small gift size.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+        <div class="menu-card show" data-category="cakes">
+          <span class="menu-tag tag-pink">Cakes</span>
+          <h3>Kids Character Cakes</h3>
+          <p>Barbie, Paw Patrol, PJ Masks & more.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+        <div class="menu-card show" data-category="cakes">
+          <span class="menu-tag tag-pink">Cakes</span>
+          <h3>Ice Cream Cakes</h3>
+          <p>A cool twist on a classic.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+        <div class="menu-card show" data-category="cakes">
+          <span class="menu-tag tag-pink">Cakes</span>
+          <h3>Cheesecakes</h3>
+          <p>Rich and creamy.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+
+        <!-- PASTRIES -->
+        <div class="menu-card" data-category="pastries">
+          <span class="menu-tag tag-gold">Pastries</span>
+          <h3>Meat Pies</h3>
+          <p>Savory and filling.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+        <div class="menu-card" data-category="pastries">
+          <span class="menu-tag tag-gold">Pastries</span>
+          <h3>Spring Rolls & Samosas</h3>
+          <p>Crispy appetizers.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+        <div class="menu-card" data-category="pastries">
+          <span class="menu-tag tag-gold">Pastries</span>
+          <h3>Cupcakes</h3>
+          <p>Sweet and beautifully frosted.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+        <div class="menu-card" data-category="pastries">
+          <span class="menu-tag tag-gold">Savory</span>
+          <h3>Pizza</h3>
+          <p>Freshly baked.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+        <div class="menu-card" data-category="pastries">
+          <span class="menu-tag tag-gold">Pastries</span>
+          <h3>Fresh Bread & Doughnuts</h3>
+          <p>Baked daily.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+
+        <!-- LUNCH -->
+        <div class="menu-card" data-category="lunch">
+          <span class="menu-tag tag-green">Lunch Haven</span>
+          <h3>Packed Lunch Boxes</h3>
+          <p>Healthy, balanced meals to go.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+        <div class="menu-card" data-category="lunch">
+          <span class="menu-tag tag-green">Lunch Haven</span>
+          <h3>Jollof Rice & Chicken</h3>
+          <p>A local favorite.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+        <div class="menu-card" data-category="lunch">
+          <span class="menu-tag tag-green">Lunch Haven</span>
+          <h3>Chicken Wraps & Sandwiches</h3>
+          <p>Quick and satisfying.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+        <div class="menu-card" data-category="lunch">
+          <span class="menu-tag tag-green">Event</span>
+          <h3>Event Food Baskets</h3>
+          <p>Breakfast and lunch baskets for events.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+
+        <!-- JUICE -->
+        <div class="menu-card" data-category="juice">
+          <span class="menu-tag tag-green">Fruity Splash</span>
+          <h3>Fresh Watermelon Juice</h3>
+          <p>Customer favorite!</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+        <div class="menu-card" data-category="juice">
+          <span class="menu-tag tag-green">Fruity Splash</span>
+          <h3>Natural Fruit Blends</h3>
+          <p>Freshly squeezed.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+        <div class="menu-card" data-category="juice">
+          <span class="menu-tag tag-green">Fruity Splash</span>
+          <h3>Fruit Salads</h3>
+          <p>Fresh and healthy.</p>
+          <span style="display:block; font-size:0.85rem; font-weight:800; color:var(--green); margin-top:0.5rem;">Request Quote</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section section-tint" id="reviews">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center;">
+        <p class="eyebrow" style="justify-content:center;">Reviews</p>
+        <h2>What customers are saying</h2>
+      </div>
+      
+      <div class="reviews-grid reveal">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"The cake was really nice and the icing had very little sugar. The reception was warm and friendly. I'll highly recommend Klassic bites!"</p>
+          <p class="review-author">— Forgive Ahiave</p>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"The delivery, the packaging, the communication, everything went perfectly. My expectations were well met."</p>
+          <p class="review-author">— Ryan Wolverines</p>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Best experience I have had so far from all the bakery services I have patronized. Their service is top notch."</p>
+          <p class="review-author">— Kelly Gilbert</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="section" id="location">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Visit Us</p>
+        <h2>Find Us in Ho</h2>
+      </div>
+      
+      <div class="location-card reveal">
+        <div class="location-list">
+          <div class="location-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+            <div>
+              <strong>Address</strong>
+              <span>17 Ho - Denu Rd, Ho, Volta Region</span>
+            </div>
+          </div>
+          
+          <div class="location-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+            <div>
+              <strong>Hours</strong>
+              <span>Mon - Sat: 8:00 AM – 8:30 PM<br>Closed Sundays</span>
+            </div>
+          </div>
+
+          <div class="location-item">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
+            <div>
+              <strong>Contact</strong>
+              <span><a href="tel:+233555077589">+233 55 507 7589</a> | <a href="mailto:klassicbiteshub@gmail.com">klassicbiteshub@gmail.com</a></span>
+            </div>
+          </div>
+
+          <div class="location-item">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+            <div>
+              <strong>Payments Accepted</strong>
+              <span>MoMo, Debit/Credit Cards, NFC</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://maps.app.goo.gl/EJDrpJqq8enrtapu8" target="_blank" rel="noopener" class="btn btn-green" style="margin-top: 1rem;">Get Directions</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" style="background:var(--surface-solid); border-top:1px solid var(--line); padding: 3rem 0 6rem; text-align:center;">
+  <div class="wrap reveal">
+    <div class="brand-title" style="font-size: 2rem; margin-bottom: 0.5rem; color:var(--green);">Klassic Bites</div>
+    <p style="color:var(--text-mute); font-size:0.9rem; margin-bottom: 1.5rem;">© 2026 Klassic Bites. Feel the taste in every bite!</p>
+    
+    <div style="display:flex; justify-content:center; gap:1.5rem; margin-bottom: 2rem;">
+      <a href="https://instagram.com/klassic_bites" target="_blank" style="font-weight:700; color:var(--text);">Instagram</a>
+      <a href="https://facebook.com/klassicbites" target="_blank" style="font-weight:700; color:var(--text);">Facebook</a>
+      <a href="https://wa.me/233555077589" target="_blank" style="font-weight:800; color:var(--green);">WhatsApp</a>
+    </div>
+
+    <div style="font-size:0.8rem; color:var(--text-mute); margin-bottom: 1rem;">
+      <strong>Sister Brands:</strong> 
+      <a href="https://instagram.com/klassic_fruitysplash" target="_blank" style="color:var(--green); font-weight:700;">Klassic Fruity Splash</a> | 
+      <a href="https://instagram.com/the_lunch_haven" target="_blank" style="color:var(--green); font-weight:700;">The Lunch Haven</a>
+    </div>
+
+    <p style="font-size: 0.75rem; color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.05em;">
+      Website by <a href="#" style="color: var(--text);">Saviour</a>
+    </p>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/233555077589?text=Hello%20Klassic%20Bites,%20I%20have%20an%20enquiry" target="_blank" rel="noopener" class="fab" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+</a>
+
+<script>
+(function () {
+  var menuBtn = document.getElementById('menuBtn');
+  var navLinks = document.getElementById('navLinks');
+  var header = document.getElementById('siteHeader');
+  var progressBar = document.getElementById('scrollProgress');
+  var dateInput = document.getElementById('order-date');
+  var heroGlow = document.getElementById('heroGlow');
+  var heroSvg = document.getElementById('heroSvg');
+  
+  // --- 48-Hour Notice Date Restriction ---
+  if (dateInput) {
+    var today = new Date();
+    today.setDate(today.getDate() + 2); 
+    var minDate = today.toISOString().split('T')[0];
+    dateInput.setAttribute('min', minDate);
+  }
+
+  // Navigation
+  window.toggleMenu = function() {
+    navLinks.classList.toggle('open');
+    menuBtn.classList.toggle('open');
+  }
+  window.closeMenu = function() {
+    navLinks.classList.remove('open');
+    menuBtn.classList.remove('open');
+  }
+  menuBtn.addEventListener('click', window.toggleMenu);
+
+  // Scroll Progress, Header & Parallax
+  window.addEventListener('scroll', function() {
+    var scrolled = window.scrollY;
+    
+    // Header
+    if (scrolled > 20) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+
+    // Progress Bar
+    var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if (scrollHeight > 0) progressBar.style.width = ((scrolled / scrollHeight) * 100) + '%';
+    
+    // Parallax Effect (only on desktop/tablet)
+    if (window.innerWidth > 768) {
+      if (heroGlow) heroGlow.style.transform = 'translateX(-50%) translateY(' + (scrolled * 0.3) + 'px)';
+      if (heroSvg) heroSvg.style.transform = 'translate(-50%, calc(-50% + ' + (scrolled * 0.4) + 'px)) rotate(' + (scrolled * 0.02) + 'deg)';
+    }
+  });
+
+  // --- Live Open/Closed Status ---
+  var statusDot = document.getElementById('statusDot');
+  var statusText = document.getElementById('statusText');
+
+  function updateStatus() {
+    var now = new Date();
+    var day = now.getUTCDay(); 
+    var h = now.getUTCHours();
+    var m = now.getUTCMinutes();
+    var timeVal = h + (m / 60);
+    
+    var isOpen = false;
+    var openTime = 8; 
+    var closeTime = 20.5; 
+
+    if (day >= 1 && day <= 6) {
+      if (timeVal >= openTime && timeVal < closeTime) isOpen = true;
+    }
+
+    if (isOpen) {
+      statusDot.classList.add('is-open');
+      statusText.textContent = "Open Now · Closes 8:30 PM";
+    } else {
+      statusDot.classList.remove('is-open');
+      statusText.textContent = (day === 0) ? "Closed today · Opens Monday 8 AM" : "Closed · Opens tomorrow 8 AM";
+    }
+  }
+  updateStatus();
+  setInterval(updateStatus, 60000); 
+
+  // --- Theme Toggle ---
+  var themeToggle = document.getElementById('themeToggle');
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      if (themeMeta) themeMeta.setAttribute('content', next === 'dark' ? '#0F1710' : '#FFFFFF');
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  }
+
+  // Scroll Reveal
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+    reveals.forEach(function(el) { observer.observe(el); });
+  } else {
+    reveals.forEach(function(el) { el.classList.add('in'); });
+  }
+
+  // --- Custom Builder Logic ---
+  var WA_PHONE = '233555077589';
+  
+  document.getElementById('send-custom-btn').addEventListener('click', function() {
+    var cat = document.getElementById('order-category').value;
+    var size = document.getElementById('order-size').value;
+    var flavour = document.getElementById('order-flavour').value;
+    var dateVal = document.getElementById('order-date').value;
+    var msg = document.getElementById('order-msg').value.trim();
+
+    if (!dateVal) {
+      alert("Please select a date for your order.");
+      return;
+    }
+
+    var selectedDate = new Date(dateVal + 'T00:00:00'); 
+    var currentDate = new Date();
+    currentDate.setHours(0,0,0,0);
+    var minDate = new Date(currentDate);
+    minDate.setDate(minDate.getDate() + 2); 
+
+    if (selectedDate < minDate) {
+      alert("Please note: We require 48 hours notice. Please select a date from " + minDate.toLocaleDateString() + " onwards.");
+      return;
+    }
+
+    var text = "*Hello Klassic Bites!* I would like to place an order:\n\n";
+    text += "📌 *Category:* " + cat + "\n";
+    text += "📏 *Size/Shape:* " + size + "\n";
+    if (flavour !== "Not Applicable (Food/Pastry)") text += "🍰 *Flavour:* " + flavour + "\n";
+    text += "📅 *Date Needed:* " + dateVal + "\n";
+    if (msg) text += "✍🏽 *Inscription/Instructions:* " + msg + "\n";
+    text += "\nPlease let me know the total cost and how I can pay.";
+
+    var url = 'https://wa.me/' + WA_PHONE + '?text=' + encodeURIComponent(text);
+    window.open(url, '_blank');
+  });
+
+  // --- Filterable Menu Tabs Logic ---
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  var menuCards = document.querySelectorAll('.menu-card');
+
+  tabBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      tabBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var target = btn.getAttribute('data-target');
+
+      menuCards.forEach(function(card) {
+        card.classList.remove('show');
+        if (card.getAttribute('data-category') === target) {
+          setTimeout(function() { card.classList.add('show'); }, 10);
+        }
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
